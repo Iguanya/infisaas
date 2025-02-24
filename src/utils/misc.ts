@@ -193,3 +193,45 @@ export async function getReport(name: keyof typeof reports) {
   fyo.store.reports[name] = report;
   return report;
 }
+
+export function getRandomString(): string {
+  return Math.random().toString(36).substring(7);
+}
+
+export function getCountryCodeFromCountry(country: string): string {
+  const countryCodes: Record<string, string> = {
+    "Kenya": "KE",
+    "Tanzania": "TZ",
+    "Uganda": "UG"
+  };
+  return countryCodes[country] || "Unknown";
+}
+
+export function getCountryInfo(country: string) {
+  return {
+    name: country,
+    code: getCountryCodeFromCountry(country)
+  };
+}
+
+export function getMapFromList<T>(list: T[], key: keyof T) {
+  return Object.fromEntries(list.map(item => [item[key], item]));
+}
+
+export function getValueMapFromList<T>(list: T[], key: keyof T) {
+  return list.reduce((acc, item) => {
+    acc[item[key] as keyof T] = item;
+    return acc;
+  }, {} as Record<string, T>);
+}
+
+export function safeParseFloat(value: unknown): number {
+  const num = parseFloat(value as string);
+  return isNaN(num) ? 0 : num;
+}
+
+export function assertIsType<T>(value: unknown, type: string): asserts value is T {
+  if (typeof value !== type) {
+    throw new Error(`Expected type ${type} but got ${typeof value}`);
+  }
+}
