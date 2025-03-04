@@ -109,10 +109,11 @@
 
     <!-- Report Issue and DB Switcher -->
     <div class="window-no-drag flex flex-col gap-2 py-2 px-4">
+      <!-- 
       <button
         class="
           flex
-          text-sm text-gray-600
+          text-sm text-gray-800
           dark:text-gray-500
           hover:text-gray-800
           dark:hover:text-gray-400
@@ -126,11 +127,13 @@
           {{ t`Help` }}
         </p>
       </button>
+      -->
+
 
       <button
         class="
           flex
-          text-sm text-gray-600
+          text-sm text-gray-900
           dark:text-gray-500
           hover:text-gray-800
           dark:hover:text-gray-400
@@ -147,7 +150,7 @@
         data-testid="change-db"
         class="
           flex
-          text-sm text-gray-600
+          text-sm text-gray-900
           dark:text-gray-500
           hover:text-gray-800
           dark:hover:text-gray-400
@@ -160,10 +163,11 @@
         <p>{{ t`Change DB` }}</p>
       </button>
 
+      <!--
       <button
         class="
           flex
-          text-sm text-gray-600
+          text-sm text-gray-900
           dark:text-gray-500
           hover:text-gray-800
           dark:hover:text-gray-400
@@ -177,6 +181,7 @@
           {{ t`Report Issue` }}
         </p>
       </button>
+      -->
 
       <p
         v-if="showDevMode"

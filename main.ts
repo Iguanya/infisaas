@@ -23,7 +23,7 @@ import registerIpcMainMessageListeners from './main/registerIpcMainMessageListen
 import registerProcessListeners from './main/registerProcessListeners';
 
 export class Main {
-  title = 'Frappe Books';
+  title = 'Accounting';
   icon: string;
 
   winURL = '';
@@ -82,7 +82,7 @@ export class Main {
     registerAppLifecycleListeners(this);
     registerProcessListeners(this);
   }
-
+ 
   getOptions(): BrowserWindowConstructorOptions {
     const preload = path.join(__dirname, 'main', 'preload.js');
     const options: BrowserWindowConstructorOptions = {

@@ -1,5 +1,5 @@
 {
-  "name": "frappe-books",
+  "name": "INFISaas",
   "version": "0.27.0",
   "description": "Simple book-keeping app for everyone",
   "author": {
@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "node build/scripts/dev.mjs",
     "build": "node build/scripts/build.mjs",
+    "dist": "electron-builder",
     "release": "scripts/publish-mac-arm.sh",
     "postinstall": "electron-rebuild",
     "postuninstall": "electron-rebuild",
@@ -27,6 +28,7 @@
     "codemirror": "^6.0.1",
     "core-js": "^3.19.0",
     "electron-store": "^8.0.1",
+    "express": "^4.21.2",
     "feather-icons": "^4.28.0",
     "knex": "^2.4.0",
     "lodash": "^4.17.21",
@@ -58,7 +60,7 @@
     "chokidar": "^3.5.3",
     "dotenv": "^16.0.0",
     "electron": "22.3.27",
-    "electron-builder": "^24.9.1",
+    "electron-builder": "^25.1.8",
     "electron-devtools-installer": "^3.2.0",
     "electron-updater": "^6.3.0",
     "eslint": "^8.43.0",

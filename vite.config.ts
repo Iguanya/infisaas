@@ -2,6 +2,7 @@ import vue from '@vitejs/plugin-vue';
 import path from 'path';
 import { defineConfig } from 'vite';
 
+
 /**
  * This vite config file is used only for dev mode, i.e.
  * to create a serve build modules of the source code
@@ -9,7 +10,8 @@ import { defineConfig } from 'vite';
  *
  * For building the project, vite is used programmatically
  * see build/scripts/build.mjs for this.
- */
+ */ 
+
 export default () => {
   let port = 6969;
   let host = '0.0.0.0';
@@ -36,6 +38,9 @@ export default () => {
         dummy: path.resolve(__dirname, './dummy'),
         fixtures: path.resolve(__dirname, './fixtures'),
       },
+    },
+    define: {
+      'process.env': process.env, // Preserve environment variables
     },
   });
 };

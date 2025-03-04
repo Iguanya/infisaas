@@ -57,24 +57,26 @@ import { toggleSidebar } from 'src/utils/ui';
     <button
       v-show="!showSidebar"
       class="
-        absolute
-        bottom-0
-        start-0
+        fixed
+        bottom-4
+        start-4
         text-gray-600
         dark:text-gray-400
-        hover:bg-gray-100
-        dark:hover:bg-gray-900
-        rounded
-        rtl-rotate-180
-        p-1
-        m-4
-        opacity-0
-        hover:opacity-100 hover:shadow-md
+        bg-white
+        dark:bg-gray-800
+        hover:bg-gray-200
+        dark:hover:bg-gray-700
+        rounded-full
+        p-2
+        shadow-md
+        z-50
+        transition-all
       "
       @click="() => toggleSidebar()"
     >
-      <feather-icon name="chevrons-right" class="w-4 h-4" />
+      <feather-icon name="chevrons-right" class="w-5 h-5" />
     </button>
+
   </div>
 </template>
 <script lang="ts">
