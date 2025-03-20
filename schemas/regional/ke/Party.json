@@ -1,0 +1,76 @@
+{
+  "name": "Party",
+  "fields": [
+    {
+      "fieldname": "kraPin",
+      "label": "KRA PIN",
+      "placeholder": "Enter KRA PIN",
+      "fieldtype": "Data",
+      "section": "Billing"
+    },
+    {
+      "fieldname": "businessType",
+      "label": "Business Type",
+      "fieldtype": "Select",
+      "default": "Individual",
+      "options": [
+        {
+          "value": "Individual",
+          "label": "Individual"
+        },
+        {
+          "value": "Sole Proprietorship",
+          "label": "Sole Proprietorship"
+        },
+        {
+          "value": "Limited Liability Company",
+          "label": "Limited Liability Company"
+        },
+        {
+          "value": "Partnership",
+          "label": "Partnership"
+        }
+      ],
+      "section": "Billing"
+    },
+    {
+      "fieldname": "vatNumber",
+      "label": "VAT Number",
+      "fieldtype": "Data",
+      "section": "Billing"
+    },
+    {
+      "fieldname": "taxComplianceStatus",
+      "label": "Tax Compliance Status",
+      "fieldtype": "Select",
+      "options": [
+        {
+          "value": "Compliant",
+          "label": "Compliant"
+        },
+        {
+          "value": "Non-Compliant",
+          "label": "Non-Compliant"
+        },
+        {
+          "value": "Pending",
+          "label": "Pending"
+        }
+      ],
+      "section": "Billing"
+    }
+  ],
+  "quickEditFields": [
+    "email",
+    "phone",
+    "address",
+    "defaultAccount",
+    "currency",
+    "role",
+    "kraPin",
+    "businessType",
+    "vatNumber",
+    "taxComplianceStatus"
+  ],
+  "removeFields": ["gstType", "gstin", "taxId"]
+}

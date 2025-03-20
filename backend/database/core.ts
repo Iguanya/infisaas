@@ -66,7 +66,7 @@ export default class DatabaseCore extends DatabaseBase {
   }
 
   static async getCountryCode(dbPath: string): Promise<string> {
-    let countryCode = 'in';
+    let countryCode = 'kes';
     const db = new DatabaseCore(dbPath);
     await db.connect();
 

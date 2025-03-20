@@ -33,15 +33,15 @@ export async function setupDummyInstance(
   notifier?.(fyo.t`Setting Up Instance`, -1);
   const options = {
     logo: null,
-    companyName: "Flo's Clothes",
-    country: 'India',
-    fullname: 'Lin Florentine',
-    email: 'lin@flosclothes.com',
-    bankName: 'Supreme Bank',
-    currency: 'INR',
+    companyName: "Kevmoon Hub",
+    country: 'Kenya',
+    fullname: 'Kevin',
+    email: 'kev@kevmoonhub.com',
+    bankName: 'KCB Bank',
+    currency: 'KES',
     fiscalYearStart: getFiscalYear('04-01', true)!.toISOString(),
     fiscalYearEnd: getFiscalYear('04-01', false)!.toISOString(),
-    chartOfAccounts: 'India - Chart of Accounts',
+    chartOfAccounts: 'Standard Chart of Accounts',
   };
   await setupInstance(dbPath, options, fyo);
   fyo.store.skipTelemetryLogging = true;
@@ -66,26 +66,26 @@ async function setOtherSettings(fyo: Fyo) {
   const doc = await fyo.doc.getDoc(ModelNameEnum.PrintSettings);
   const address = fyo.doc.getNewDoc(ModelNameEnum.Address);
   await address.setAndSync({
-    addressLine1: '1st Column, Fitzgerald Bridge',
-    city: 'Pune',
-    state: 'Maharashtra',
-    pos: 'Maharashtra',
-    postalCode: '411001',
-    country: 'India',
+    addressLine1: 'G10, TRM',
+    city: 'Nairobi',
+    state: 'Nairobi',
+    pos: '00100',
+    postalCode: '00001',
+    country: 'Kenya',
   });
 
   await doc.setAndSync({
-    color: '#F687B3',
+    color: 'Indigo',
     template: 'Business',
     displayLogo: true,
-    phone: '+91 8983-000418',
+    phone: '+254 700000000',
     logo,
     address: address.name,
   });
 
   const acc = await fyo.doc.getDoc(ModelNameEnum.AccountingSettings);
   await acc.setAndSync({
-    gstin: '27LIN180000A1Z5',
+    kraPin: 'A123456789B',
   });
 }
 

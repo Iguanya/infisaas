@@ -1,0 +1,23 @@
+{
+  "name": "AccountingSettings",
+  "fields": [
+    {
+      "fieldname": "kraPin",
+      "label": "KRA PIN",
+      "fieldtype": "Data",
+      "options": ["VAT-16", "VAT-8", "Zero-Rated", "Exempt"],
+      "placeholder": "A123456789B",
+      "section": "Default"
+    }
+  ],
+  "quickEditFields": [
+    "fullname",
+    "email",
+    "companyName",
+    "country",
+    "currency",
+    "fiscalYearStart",
+    "fiscalYearEnd",
+    "VAT-16"
+  ]
+}

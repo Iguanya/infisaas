@@ -31,7 +31,7 @@ let isReload = false;
  */
 let electronProcess = null;
 
-console.log(`running Frappe Books in dev mode\nroot: ${root}`);
+console.log(`running Infisaas mini in dev mode\nroot: ${root}`);
 /**
  * @type {import('execa').ExecaChildProcess<string>}
  */
@@ -123,18 +123,25 @@ async function handleResult(result) {
 }
 
 function runElectron() {
-  const electronProcess = $$`npx electron --inspect=5858 ${path.join(
+  const electronProcess = $({ stdio: 'inherit' })`npx electron --inspect=5858 ${path.join(
     root,
     'dist_electron',
     'dev',
     'main.js'
   )}`;
 
+  electronProcess.on('error', (err) => {
+    console.error('Electron process error:', err);
+  });
+
+  electronProcess.on('exit', (code, signal) => {
+    console.warn(`Electron process exited with code ${code}, signal ${signal}`);
+  });
+
   electronProcess.on('close', async () => {
     if (isReload) {
       return;
     }
-
     await terminate();
   });
 

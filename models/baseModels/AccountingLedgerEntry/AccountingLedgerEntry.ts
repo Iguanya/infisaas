@@ -13,6 +13,14 @@ export class AccountingLedgerEntry extends Doc {
   referenceName?: string;
   reverted?: boolean;
 
+  static defaultVATSettings = {
+    defaultVATRate: 16,
+    defaultTaxName: 'VAT-16',
+    defaultTaxAccount: 'VAT Payable',
+    applyVATToSales: true,
+    applyVATToPurchases: false,
+  };
+
   async revert() {
     if (this.reverted) {
       return;

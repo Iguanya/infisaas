@@ -1,9 +1,17 @@
 import { Fyo } from 'fyo';
-import { createIndianRecords } from './in/in';
+import { createKenyanRecords } from './ke/ke';  // 👈 Ensure correct import
 
 export async function createRegionalRecords(country: string, fyo: Fyo) {
-  if (country === 'India') {
-    await createIndianRecords(fyo);
+  console.log(`✅ Running createRegionalRecords for country: ${country}`);
+
+  try {
+    if (country === 'Kenya') {
+      await createKenyanRecords(fyo);
+    } else {
+      console.warn(`⚠️ No regional configuration found for country: ${country}`);
+    }
+  } catch (error) {
+    console.error(`🚨 Error in createRegionalRecords:`, error);
   }
 
   return;

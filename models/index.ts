@@ -112,11 +112,18 @@ export const models = {
 export async function getRegionalModels(
   countryCode: string
 ): Promise<ModelMap> {
-  if (countryCode !== 'in') {
-    return {};
+  switch (countryCode) {
+    case 'in': {
+      const { Address } = await import('./regionalModels/in/Address');
+      const { Party } = await import('./regionalModels/in/Party');
+      return { Address, Party };
+    }
+    case 'ke': {  // Load Kenyan models
+      const { Address } = await import('./regionalModels/ke/Address');
+      const { Party } = await import('./regionalModels/ke/Party');
+      return { Address, Party };
+    }
+    default:
+      return {};
   }
-
-  const { Address } = await import('./regionalModels/in/Address');
-  const { Party } = await import('./regionalModels/in/Party');
-  return { Address, Party };
 }

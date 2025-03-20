@@ -20,6 +20,19 @@
     "lint": "eslint . --ext ts,vue",
     "format": "prettier --write ."
   },
+  "build": {
+    "appId": "com.infisaas.app",
+    "productName": "INFISaaS",
+    "win": {
+      "icon": "build/installericon.ico",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
   "dependencies": {
     "@codemirror/autocomplete": "^6.4.2",
     "@codemirror/lang-vue": "^0.1.1",

@@ -1,0 +1,32 @@
+{
+  "name": "Address",
+  "fields": [
+    {
+      "fieldname": "county",
+      "label": "County",
+      "fieldtype": "Select",
+      "options": [
+        "Nairobi",
+        "Mombasa",
+        "Kisumu",
+        "Nakuru",
+        "Eldoret",
+        "Thika",
+        "Malindi",
+        "Kitale",
+        "Garissa",
+        "Kakamega"
+      ],
+      "section": "Location"
+    }
+  ],
+  "quickEditFields": [
+    "addressLine1",
+    "addressLine2",
+    "city",
+    "country",
+    "state",
+    "postalCode",
+    "county"
+  ]
+}
