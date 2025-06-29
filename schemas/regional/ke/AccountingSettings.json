@@ -8,6 +8,13 @@
       "options": ["VAT-16", "VAT-8", "Zero-Rated", "Exempt"],
       "placeholder": "A123456789B",
       "section": "Default"
+    },
+    {
+      "defaultVATRate": 16,
+      "defaultTaxName": "VAT-16",
+      "defaultTaxAccount": "VAT Payable",
+      "applyVATToSales": true,
+      "applyVATToPurchases": false
     }
   ],
   "quickEditFields": [
